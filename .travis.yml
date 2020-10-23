@@ -1,0 +1,19 @@
+language: node_js
+os: linux
+node_js:
+  - 12
+
+install:
+  - npm i -g @doc-tools/docs
+  - nodeVersion=$(node --version); echo "Node - $nodeVersion"
+  - npmVersion=$(npm --version); echo "NPM - $npmVersion"
+  - yfmVersion=(yfm --version); echo "YFM - $yfmVersion"
+
+before_script:
+  - mkdir docs
+  - mv `ls -A | grep -v docs` docs
+
+script:
+  - YFM_STORAGE_PREFIX=$TRAVIS_PULL_REQUEST yfm --input=./docs --output=./output --publish
+
+cache: false
