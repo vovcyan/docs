@@ -1,0 +1,4 @@
+allowHtml: true
+
+storageEndpoint: "https://storage.yandexcloud.net/"
+storageBucket: "test-bkt"

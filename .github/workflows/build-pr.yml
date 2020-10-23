@@ -1,0 +1,35 @@
+name: Build documentaion on pull request
+
+on:
+  pull_request:
+    branches: [master]
+    types: [opened, synchronize]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+      - name: Prepare files
+        run: |
+          mkdir docs
+          mv `ls -A | grep -v docs` docs
+      - name: Install yfm-docs
+        run: npm i --save @doc-tools/docs
+      - name: Build documentation with @doc-tools/docs
+        run: |
+          echo $YFM_STORAGE_PREFIX
+          node ./node_modules/@doc-tools/docs/build/index.js \
+            --input=./docs \
+            --output=./output \
+            --publish \
+            /
+        env:
+          YFM_STORAGE_PREFIX: ${{ github.ref }}
+          YFM_STORAGE_KEY_ID: ${{ secrets.S3_STORAGE_KEY_ID }}
+          YFM_STORAGE_SECRET_KEY: ${{ secrets.S3_STORAGE_SECRET_KEY }}
