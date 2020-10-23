@@ -6,6 +6,8 @@ editable: false
 
 Set of methods for managing symmetric KMS keys.
 
+Some new awesome changes
+
 | Call | Description |
 | --- | --- |
 | [Create](#Create) | --- control plane Creates a symmetric KMS key in the specified folder. |
