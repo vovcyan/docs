@@ -14,11 +14,6 @@ before_script:
   - mv `ls -A | grep -v docs` docs
 
 script:
-  - YFM_STORAGE_PREFIX=$TRAVIS_PULL_REQUEST
-  - yfm \
-    --input=./docs \
-    --output=./output \
-    --publish \
-    /
+  - YFM_STORAGE_PREFIX=$TRAVIS_PULL_REQUEST yfm --input=./docs --output=./output --publish
 
 cache: false
