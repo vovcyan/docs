@@ -8,6 +8,7 @@ install:
   - nodeVersion=$(node --version); echo "Node - $nodeVersion"
   - npmVersion=$(npm --version); echo "NPM - $npmVersion"
   - yfmVersion=(yfm --version); echo "YFM - $yfmVersion"
+  - echo $YFM_STORAGE_KEY_ID
 
 before_script:
   - mkdir docs
