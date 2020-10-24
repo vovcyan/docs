@@ -1,5 +1,5 @@
 # Заголовок и описание на странице
-title: "Yandex Compute Cloud"
+title: "Yandex Compute Cloud test"
 description:
   - "Сервис Yandex Compute Cloud предоставляет масштабируемые вычислительные мощности для создания виртуальных машин и управления ими. Сервис поддерживает <a href=\"https://cloud.yandex.ru/docs/compute/concepts/preemptible-vm\">прерываемые</a> виртуальные машины, а также отказоустойчивые <a href=\"https://cloud.yandex.ru/docs/compute/concepts/instance-groups/\">группы виртуальных машин</a>."
   - "Вы можете подключать к виртуальным машинам диски с образами на базе OC Linux и Windows, доступные в <a href=\"https://cloud.yandex.ru/marketplace\">Marketplace</a>. Каждый диск автоматически реплицируется внутри своей зоны доступности, что обеспечивает надежное хранение данных. Также, для удобного переноса данных с одного диска на другой, Compute Cloud поддерживает <a href=\"https://cloud.yandex.ru/docs/compute/concepts/snapshot\">снимки дисков</a>."
